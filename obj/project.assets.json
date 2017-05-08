@@ -11313,10 +11313,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Edorator\\Services\\Edorator.Security\\Edorator.Security.csproj",
+      "projectUniqueName": "D:\\Edorator.Solution\\Edorator.Security\\Edorator.Security.csproj",
       "projectName": "Edorator.Security",
-      "projectPath": "D:\\Edorator\\Services\\Edorator.Security\\Edorator.Security.csproj",
-      "outputPath": "D:\\Edorator\\Services\\Edorator.Security\\obj\\",
+      "projectPath": "D:\\Edorator.Solution\\Edorator.Security\\Edorator.Security.csproj",
+      "outputPath": "D:\\Edorator.Solution\\Edorator.Security\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

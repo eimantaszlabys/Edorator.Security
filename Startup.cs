@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.MongoDB;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -35,6 +36,8 @@ namespace Edorator.Security
                 options.SerializerSettings.DefaultValueHandling = DefaultValueHandling.Ignore;
                 options.SerializerSettings.ContractResolver = new DefaultContractResolver();
             });
+
+            services.AddCors();
 
             services.AddSwaggerGen();
         }
@@ -70,6 +73,14 @@ namespace Edorator.Security
             loggerFactory.AddDebug();
             loggerFactory.AddConsole();
 
+
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins("http://localhost:3000");
+                builder.WithMethods("OPTIONS", "POST");
+                builder.WithHeaders("X-Requested-With", "content-type");
+                builder.AllowCredentials();
+            });
             app.UseMvc();
 
             app.UseSwagger();
