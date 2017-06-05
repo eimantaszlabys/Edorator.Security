@@ -81,11 +81,29 @@ namespace Edorator.Security.Controllers
                 }
                 else
                 {
-                    return BadRequest(result);
+                    return BadRequest(new {
+                        errorMessage = "Bad 'username' or 'password'."
+                    });
                 }
             }
 
             return BadRequest(ModelState);
+        }
+
+        [HttpPost]
+        //[Authorize(ActiveAuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Route("logout")]
+        public async Task<ActionResult> LogOut()
+        {
+            ClaimsPrincipal principal = User;
+            
+
+            if(principal.Identity.IsAuthenticated)
+            {
+                await _signInManager.SignOutAsync();
+            }
+
+            return Ok();
         }
 
         private static string GenerateToken(IdentityUser user, DateTime expires)
@@ -105,7 +123,8 @@ namespace Edorator.Security.Controllers
                 Audience = TokenAuthOption.Audience,
                 SigningCredentials = TokenAuthOption.SigningCredentials,
                 Subject = new ClaimsIdentity(claims),
-                Expires = expires
+                Expires = expires,
+                
             });
             return handler.WriteToken(securityToken);
         }
@@ -117,18 +136,18 @@ namespace Edorator.Security.Controllers
             SecurityToken securityToken;
             var validationParameters = new TokenValidationParameters()
             {
-                ValidIssuer = "Edorator",
-                ValidAudience = "edorator-user",
-                ValidateIssuerSigningKey = true,
-                ValidateAudience = true,
-                ValidateIssuer = true,
-                //  IssuerSigningKey = new SymmetricSecurityKey(),
+                ValidIssuer = TokenAuthOption.Issuer,
+                ValidAudience = TokenAuthOption.Audience,
+                 IssuerSigningKey = TokenAuthOption.Key,
 
             };
 
             var recipientTokenHandler = new JwtSecurityTokenHandler();
             ClaimsPrincipal claimsPrincipal = recipientTokenHandler.ValidateToken(accessToken, validationParameters, out securityToken);
-            return Ok(claimsPrincipal.Claims);
+            return Ok(claimsPrincipal.Claims.Select(x => new
+            {
+                x.Value
+            }));
         }
     }
 }

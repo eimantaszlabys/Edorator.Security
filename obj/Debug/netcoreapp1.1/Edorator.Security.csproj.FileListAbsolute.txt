@@ -43,3 +43,12 @@ D:\Edorator.Solution\Edorator.Security\obj\Debug\netcoreapp1.1\Edorator.Security
 D:\Edorator.Solution\Edorator.Security\obj\Debug\netcoreapp1.1\Edorator.Security.AssemblyInfo.cs
 D:\Edorator.Solution\Edorator.Security\obj\Debug\netcoreapp1.1\Edorator.Security.dll
 D:\Edorator.Solution\Edorator.Security\obj\Debug\netcoreapp1.1\Edorator.Security.pdb
+c:\Users\user\Documents\Edorator\Edorator.Security\bin\Debug\netcoreapp1.1\Edorator.Security.deps.json
+c:\Users\user\Documents\Edorator\Edorator.Security\bin\Debug\netcoreapp1.1\Edorator.Security.runtimeconfig.json
+c:\Users\user\Documents\Edorator\Edorator.Security\bin\Debug\netcoreapp1.1\Edorator.Security.runtimeconfig.dev.json
+c:\Users\user\Documents\Edorator\Edorator.Security\bin\Debug\netcoreapp1.1\Edorator.Security.dll
+c:\Users\user\Documents\Edorator\Edorator.Security\bin\Debug\netcoreapp1.1\Edorator.Security.pdb
+c:\Users\user\Documents\Edorator\Edorator.Security\obj\Debug\netcoreapp1.1\Edorator.Security.csprojResolveAssemblyReference.cache
+c:\Users\user\Documents\Edorator\Edorator.Security\obj\Debug\netcoreapp1.1\Edorator.Security.AssemblyInfo.cs
+c:\Users\user\Documents\Edorator\Edorator.Security\obj\Debug\netcoreapp1.1\Edorator.Security.dll
+c:\Users\user\Documents\Edorator\Edorator.Security\obj\Debug\netcoreapp1.1\Edorator.Security.pdb
