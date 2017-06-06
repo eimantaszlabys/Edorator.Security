@@ -115,6 +115,8 @@ namespace Edorator.Security.Controllers
             foreach (string userRole in user.Roles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, userRole));
+                claims.Add(new Claim(ClaimTypes.Name, user.UserName));
+                claims.Add(new Claim(ClaimTypes.Email, user.Email));
             }
 
             var securityToken = handler.CreateToken(new SecurityTokenDescriptor

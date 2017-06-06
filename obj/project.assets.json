@@ -11287,7 +11287,7 @@
         "dependencies": {
           "Microsoft.AspNetCore": {
             "target": "Package",
-            "version": "[1.1.2, )"
+            "version": "1.1.2"
           },
           "Swashbuckle": {
             "target": "Package",
